@@ -33,10 +33,10 @@ public class VectorTestProcessor : ITestProcessor
 
     private void PrintSizes()
     {
-        Console.WriteLine($"Size of int Vector on my machine is {Vector<byte>.Count}");
-        Console.WriteLine($"Size of int Vector on my machine is {Vector<short>.Count}");
+        Console.WriteLine($"Size of byte Vector on my machine is {Vector<byte>.Count}");
+        Console.WriteLine($"Size of short Vector on my machine is {Vector<short>.Count}");
         Console.WriteLine($"Size of int Vector on my machine is {Vector<int>.Count}");
-        Console.WriteLine($"Size of int Vector on my machine is {Vector<long>.Count}");
+        Console.WriteLine($"Size of long Vector on my machine is {Vector<long>.Count}");
   }
 
     public void ExecuteSpeedTest()

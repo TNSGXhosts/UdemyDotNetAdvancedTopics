@@ -5,13 +5,13 @@ namespace TestProcessors;
 
 public class FloatDecimalComparisonTestProcessor(IFloatGenerator generator) : ITestProcessor
 {
-    private readonly short iterationsCount = 10000;
+    private readonly short _iterationsCount = 10000;
 
     public void Execute()
     {
-        Console.WriteLine($"Comparing float, decimal performance ({iterationsCount} iterations):");
+        Console.WriteLine($"Comparing float, decimal performance ({_iterationsCount} iterations):");
 
-        var data = generator.Generate(iterationsCount);
+        var data = generator.Generate(_iterationsCount);
         TestFloatComparison(data);
         TestFloatToleranceComparison(data);
         TestDecimalComparison(data.Select(x => (decimal)x).ToArray());
@@ -22,7 +22,7 @@ public class FloatDecimalComparisonTestProcessor(IFloatGenerator generator) : IT
         var timer = new Stopwatch();
         timer.Start();
 
-        for(short i = 0; i < iterationsCount; i++)
+        for(short i = 0; i < _iterationsCount; i++)
         {
             if (data[i] == 0.2f)
             {
@@ -39,7 +39,7 @@ public class FloatDecimalComparisonTestProcessor(IFloatGenerator generator) : IT
         var timer = new Stopwatch();
         timer.Start();
 
-        for(short i = 0; i < iterationsCount; i++)
+        for(short i = 0; i < _iterationsCount; i++)
         {
             if (Math.Abs(data[i] - 0.2f) <= 1e-8)
             {
@@ -56,7 +56,7 @@ public class FloatDecimalComparisonTestProcessor(IFloatGenerator generator) : IT
         var timer = new Stopwatch();
         timer.Start();
 
-        for(short i = 0; i < iterationsCount; i++)
+        for(short i = 0; i < _iterationsCount; i++)
         {
             if (data[i] == 0.2m)
             {

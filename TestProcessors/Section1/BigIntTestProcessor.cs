@@ -5,11 +5,12 @@ namespace TestProcessors;
 
 public class BigIntTestProcessor : ITestProcessor
 {
-    private readonly short iterationsCount = 10000;
+    private readonly short _iterationsCount = 10000;
+
 
     public void Execute()
     {
-        Console.WriteLine($"Testing int and BigInt as a loop counter ({iterationsCount} iterations):");
+        Console.WriteLine($"Testing int and BigInt as a loop counter ({_iterationsCount} iterations):");
         LoopTestWithIntCounter();
         LoopTestWithBigIntCounter();   
     }
@@ -19,7 +20,7 @@ public class BigIntTestProcessor : ITestProcessor
         var timer = new Stopwatch();
         timer.Start();
 
-        for(int i = 0; i <= iterationsCount; i++)
+        for(int i = 0; i <= _iterationsCount; i++)
         {
             TrashProcess();
         }
@@ -33,7 +34,7 @@ public class BigIntTestProcessor : ITestProcessor
         var timer = new Stopwatch();
         timer.Start();
 
-        for(BigInteger i = 0; i <= iterationsCount; i++)
+        for(BigInteger i = 0; i <= _iterationsCount; i++)
         {
             TrashProcess();
         }

@@ -5,12 +5,12 @@ namespace TestProcessors;
 
 public class FloatTestProcessor(IFloatGenerator generator) : ITestProcessor
 {
-    private readonly short iterationsCount = 10000;
+    private readonly short _iterationsCount = 10000;
     public void Execute()
     {
-        Console.WriteLine($"Float, decimal operations performance ({iterationsCount} iterations):");
+        Console.WriteLine($"Float, decimal operations performance ({_iterationsCount} iterations):");
 
-        var data = generator.Generate(iterationsCount);
+        var data = generator.Generate(_iterationsCount);
 
         TestFloatPerformance(data);
         TestDecimalPerformance(data.Select(x => (decimal)x).ToArray());
