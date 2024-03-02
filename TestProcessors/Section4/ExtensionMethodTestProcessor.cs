@@ -10,8 +10,8 @@ public class ExtensionMethodTestProcessor : ITestProcessor
 
         var foo = new FooChild();
         Foo fooChild = foo;
-        Console.WriteLine(foo.GetNum());
-        Console.WriteLine(fooChild.GetNum());   //different polymorphic behavior unlike ordinary methods
+        Console.WriteLine($"{foo.GetNum()} {foo.Name}");
+        Console.WriteLine($"{fooChild.GetNum()} {fooChild.Name}");   //different polymorphic behavior unlike ordinary methods
 
         var me = ("Vit", 24).ToPerson();
     }
