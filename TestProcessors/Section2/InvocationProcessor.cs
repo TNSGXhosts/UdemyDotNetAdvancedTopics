@@ -4,7 +4,7 @@ public class InvocationProcessor : ITestProcessor
 {
     public void Execute()
     {
-        Console.WriteLine("Test some invocations:");
+        Console.WriteLine("Invocation demonstration:");
 
         var str = "abracadabra    ";
         var strType = typeof(string);

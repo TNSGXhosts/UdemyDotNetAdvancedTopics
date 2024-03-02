@@ -7,7 +7,7 @@ public class AttributesProcessor : ITestProcessor
     public void Execute()
     {
         //Attributes is not a way for metaprogramming
-        Console.WriteLine("Testing attributes:");
+        Console.WriteLine("Attributes demonstration:");
 
         var myType = typeof(AttributesProcessor);
         var testMethod = myType.GetMethod("TestMethod");
