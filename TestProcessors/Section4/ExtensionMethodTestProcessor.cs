@@ -82,4 +82,6 @@ public class Person
 {
     public string Name { get;set; }
     public int Age { get;set; }
+    public IEnumerable<Person> Childrens { get;set; } = new List<Person>();
+    public IEnumerable<Person> Parents { get;set; } = new List<Person>();
 }
